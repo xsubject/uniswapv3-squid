@@ -24,7 +24,9 @@ const poolsMetadata = JSON.parse(fs.readFileSync("./assets/pools.json", "utf-8")
 
 export const processor = new EvmBatchProcessor()
 
-    .setRpcEndpoint("https://rpc.kodiak.finance")
+    .setRpcEndpoint(
+        "https://rpc.kodiak.finance/bearithm0n7qvlnmkw26auxekwwx0ig7"
+    )
     .setGateway("https://v2.archive.subsquid.io/network/berachain-mainnet")
     .setFinalityConfirmation(75)
     .addLog({
