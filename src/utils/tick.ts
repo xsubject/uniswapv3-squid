@@ -54,6 +54,11 @@ export function feeTierToTickSpacing(feeTier: number): number {
   if (feeTier === 100) {
     return 1;
   }
+
+  if (feeTier === 20000) {
+      return 400;
+  }
+
   console.log("Unexpected fee tier", feeTier);
 
   throw Error("Unexpected fee tier");
