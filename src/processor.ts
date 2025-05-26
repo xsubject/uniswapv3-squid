@@ -23,6 +23,7 @@ import * as positionsAbi from "./abi/NonfungiblePositionManager";
 const poolsMetadata = JSON.parse(fs.readFileSync("./assets/pools.json", "utf-8")) as { height: number, pools: string[] }
 
 export const processor = new EvmBatchProcessor()
+
     .setRpcEndpoint("https://rpc.kodiak.finance")
     .setGateway("https://v2.archive.subsquid.io/network/berachain-mainnet")
     .setFinalityConfirmation(75)

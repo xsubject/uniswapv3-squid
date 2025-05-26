@@ -9,24 +9,25 @@ import {
 } from '../utils/constants'
 
 const processor = new EvmBatchProcessor()
-  .setDataSource({
-    archive: lookupArchive('eth-mainnet'),
-    chain: {url: 'https://rpc.ankr.com/eth', maxBatchCallSize: 10},
-  })
-  .setBlockRange({
-    from: FACTORY_DEPLOYED_AT,
-  })
-  .setFields({
-    log: {
-      topics: true,
-      data: true,
-    },
-  })
-  .addLog({
-    address: [FACTORY_ADDRESS],
-    topic0: [factoryAbi.events.PoolCreated.topic],
-  })
-  .setFinalityConfirmation(100)
+
+    .setRpcEndpoint(
+        "https://rpc.kodiak.finance/bearithm0n7qvlnmkw26auxekwwx0ig7"
+    )
+    .setGateway("https://v2.archive.subsquid.io/network/berachain-mainnet")
+    .setBlockRange({
+        from: FACTORY_DEPLOYED_AT,
+    })
+    .setFields({
+        log: {
+            topics: true,
+            data: true,
+        },
+    })
+    .addLog({
+        address: [FACTORY_ADDRESS],
+        topic0: [factoryAbi.events.PoolCreated.topic],
+    })
+    .setFinalityConfirmation(100);
 
 let pools: string[] = []
 
