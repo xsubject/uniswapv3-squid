@@ -9,7 +9,6 @@ import { EntityManager } from "./utils/entityManager";
 import { processFactory } from "./mappings/factory";
 import { processPairs } from "./mappings/core";
 import { processPositions } from "./mappings/positionManager";
-export const FACTORY_ADDRESS = "0x1F98431c8aD98523631AE4a59f267346ea31F984";
 import {
   Bundle,
   Burn,
